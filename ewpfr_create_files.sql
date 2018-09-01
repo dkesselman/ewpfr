@@ -1,0 +1,143 @@
+CREATE SCHEMA EWPFR ; 
+CREATE TABLE EWPFR.CPUWAITOVR ( 
+	"Interval Number" FOR COLUMN INTER00001 DECIMAL(5, 0) NOT NULL , 
+	"Date-Time" FOR COLUMN DATE_00001 TIMESTAMP NOT NULL , 
+	"Partition CPU Utilization" FOR COLUMN PARTI00001 DECIMAL(28, 2) DEFAULT NULL , 
+	"Dispatched CPU Time (Seconds)" FOR COLUMN DISPA00001 DECIMAL(12, 2) DEFAULT NULL , 
+	"CPU Queueing Time (Seconds)" FOR COLUMN CPU_Q00001 DECIMAL(12, 2) DEFAULT NULL , 
+	"Disk Time (Seconds)" FOR COLUMN DISK_00001 DECIMAL(12, 2) DEFAULT NULL , 
+	"Journaling Time (Seconds)" FOR COLUMN JOURN00001 DECIMAL(12, 2) DEFAULT NULL , 
+	"Operating System Contention Time (Seconds)" FOR COLUMN OPERA00001 DECIMAL(12, 2) DEFAULT NULL , 
+	"Lock Contention Time (Seconds)" FOR COLUMN LOCK_00001 DECIMAL(12, 2) DEFAULT NULL , 
+	"Inelegible Waits Contention Time (Seconds)" FOR COLUMN INELE00001 DECIMAL(12, 2) DEFAULT NULL )   
+	  
+	RCDFMT CPUWAITOVR ; 
+  
+LABEL ON COLUMN EWPFR.CPUWAITOVR 
+( "Interval Number" IS '                    Interval            number' ) ; 
+  
+LABEL ON COLUMN EWPFR.CPUWAITOVR 
+( "Interval Number" TEXT IS '  Interval number' ) ; 
+  
+CREATE TABLE EWPFR.DSKOVR ( 
+	"Intervalo" FOR COLUMN INTER00001 DECIMAL(5, 0) NOT NULL , 
+	"Date-Time" FOR COLUMN DATE_00001 TIMESTAMP DEFAULT NULL , 
+	"Average Response time" FOR COLUMN AVERA00001 DECIMAL(12, 2) DEFAULT NULL , 
+	"% Disk Busy" FOR COLUMN Q_DIS00001 DECIMAL(12, 2) DEFAULT NULL , 
+	"Reads per second" FOR COLUMN READS00001 DECIMAL(12, 2) DEFAULT NULL , 
+	"Writes per second" FOR COLUMN WRITE00001 DECIMAL(12, 2) DEFAULT NULL , 
+	"Operations per second" FOR COLUMN OPERA00001 DECIMAL(12, 2) DEFAULT NULL , 
+	"Average KB per Read" FOR COLUMN AVERA00002 DECIMAL(12, 2) DEFAULT NULL , 
+	"Average KB per Write" FOR COLUMN AVERA00003 DECIMAL(12, 2) DEFAULT NULL , 
+	"Average Service Time" FOR COLUMN AVERA00004 DECIMAL(12, 2) DEFAULT NULL , 
+	"Average Wait Time" FOR COLUMN AVERA00005 DECIMAL(12, 2) DEFAULT NULL , 
+	"Total Read MB" FOR COLUMN TOTAL00001 DECIMAL(12, 2) DEFAULT NULL , 
+	"Total Write MB" FOR COLUMN TOTAL00002 DECIMAL(12, 2) DEFAULT NULL , 
+	INTSEC BIGINT DEFAULT NULL , 
+	"Drive Capacity" FOR COLUMN DRIVE00001 DECIMAL(12, 2) DEFAULT NULL , 
+	"% Disk Full" FOR COLUMN Q_DIS00002 DECIMAL(12, 2) DEFAULT NULL )   
+	  
+	RCDFMT DSKOVR     ; 
+  
+LABEL ON COLUMN EWPFR.DSKOVR 
+( "Intervalo" TEXT IS '  Interval number' ) ; 
+  
+  
+CREATE TABLE EWPFR.DSKWAITOVR ( 
+	"Intervalo" FOR COLUMN INTER00001 DECIMAL(5, 0) NOT NULL , 
+	"Date-Time" FOR COLUMN DATE_00001 TIMESTAMP NOT NULL , 
+	"Partition CPU Utilization" FOR COLUMN PARTI00001 DECIMAL(8, 2) DEFAULT NULL , 
+	"Disk Page Faults Time (Seconds)" FOR COLUMN DISK_00001 DECIMAL(12, 2) DEFAULT NULL , 
+	"Disk Non-fault Reads Time (Seconds)" FOR COLUMN DISK_00002 DECIMAL(12, 2) DEFAULT NULL , 
+	"Disk Space Usage Contention Time (Seconds)" FOR COLUMN DISK_00003 DECIMAL(12, 2) DEFAULT NULL , 
+	"Disk Op-Start Contention Time (Seconds)" FOR COLUMN DISK_00004 DECIMAL(12, 2) DEFAULT NULL , 
+	"Disk Writes Time (Seconds)" FOR COLUMN DISK_00005 DECIMAL(12, 2) DEFAULT NULL , 
+	"Disk Other Time (Seconds)" FOR COLUMN DISK_00006 DECIMAL(12, 2) DEFAULT NULL , 
+	"Disk Page Faults Counts" FOR COLUMN DISK_00007 DECIMAL(12, 2) DEFAULT NULL , 
+	"Disk Non-fault Reads Counts" FOR COLUMN DISK_00008 DECIMAL(12, 2) DEFAULT NULL , 
+	"Disk Space Usage Contention Counts" FOR COLUMN DISK_00009 INTEGER DEFAULT NULL , 
+	"Disk Op-Start Contention Counts" FOR COLUMN DISK_00010 INTEGER DEFAULT NULL , 
+	"Disk Writes Counts" FOR COLUMN DISK_00011 DECIMAL(12, 2) DEFAULT NULL , 
+	"Disk Other Counts" FOR COLUMN DISK_00012 INTEGER DEFAULT NULL , 
+	"Disk Page Faults Contributing Jobs" FOR COLUMN DISK_00013 INTEGER DEFAULT NULL , 
+	"Disk Non-fault Reads Contributing Jobs" FOR COLUMN DISK_00014 INTEGER DEFAULT NULL , 
+	"Disk Space Usage Contention Contributing Jobs" FOR COLUMN DISK_00015 INTEGER DEFAULT NULL , 
+	"Disk Op-Start Contention Contributing Jobs" FOR COLUMN DISK_00016 INTEGER DEFAULT NULL , 
+	"Disk Writes Contributing Jobs" FOR COLUMN DISK_00017 INTEGER DEFAULT NULL , 
+	"Disk Other Contributing Jobs" FOR COLUMN DISK_00018 INTEGER DEFAULT NULL , 
+	"Disk Page Faults Normalized Time (Seconds)" FOR COLUMN DISK_00019 DECIMAL(12, 2) DEFAULT NULL , 
+	"Disk Non-fault Reads Normalized Time (Seconds)" FOR COLUMN DISK_00020 DECIMAL(12, 2) DEFAULT NULL , 
+	"Disk Space Usage Contention Normalized Time (Seconds)" FOR COLUMN DISK_00021 DECIMAL(12, 2) DEFAULT NULL , 
+	"Disk Op-Start Contention Normalized Time (Seconds)" FOR COLUMN DISK_00022 DECIMAL(12, 2) DEFAULT NULL , 
+	"Disk Writes Normalized Time (Seconds)" FOR COLUMN DISK_00023 DECIMAL(12, 2) DEFAULT NULL , 
+	"Disk Other Normalized Time (Seconds)" FOR COLUMN DISK_00024 DECIMAL(12, 2) DEFAULT NULL )   
+	  
+	RCDFMT DSKWAITOVR ; 
+  
+LABEL ON COLUMN EWPFR.DSKWAITOVR 
+( "Intervalo" IS '                    Interval            number' ) ; 
+  
+LABEL ON COLUMN EWPFR.DSKWAITOVR 
+( "Intervalo" TEXT IS '  Interval number' ) ; 
+  
+  
+CREATE TABLE EWPFR.FLTRATOVR ( 
+	"Interval" FOR COLUMN INTER00001 DECIMAL(5, 0) NOT NULL , 
+	"Date-Time" FOR COLUMN DATE_00001 TIMESTAMP NOT NULL , 
+	"Faults Per Second" FOR COLUMN FAULT00001 DECIMAL(12, 2) DEFAULT NULL , 
+	"Total Page Faults" FOR COLUMN TOTAL00001 DECIMAL(28, 2) DEFAULT NULL , 
+	"I/O Pending Faults Per Second" FOR COLUMN I_O_P00001 DECIMAL(12, 2) DEFAULT NULL , 
+	"I/O Total Pending Faults" FOR COLUMN I_O_T00001 DECIMAL(12, 2) DEFAULT NULL )   
+	  
+	RCDFMT FLTRATOVR  ; 
+  
+LABEL ON COLUMN EWPFR.FLTRATOVR 
+( "Interval" IS '                    Interval            number' ) ; 
+  
+LABEL ON COLUMN EWPFR.FLTRATOVR 
+( "Interval" TEXT IS '  Interval number' ) ; 
+  
+CREATE TABLE EWPFR.FLTRATOVR2 ( 
+	"Interval" FOR COLUMN INTER00001 DECIMAL(5, 0) NOT NULL , 
+	"Date-Time" FOR COLUMN DATE_00001 TIMESTAMP NOT NULL , 
+	"Faults Per Second" FOR COLUMN FAULT00001 DECIMAL(12, 2) DEFAULT NULL , 
+	"Total Page Faults" FOR COLUMN TOTAL00001 DECIMAL(28, 2) DEFAULT NULL , 
+	"I/O Pending Faults Per Second" FOR COLUMN I_O_P00001 DECIMAL(12, 2) DEFAULT NULL , 
+	"I/O Total Pending Faults" FOR COLUMN I_O_T00001 DECIMAL(12, 2) DEFAULT NULL , 
+	POOL INTEGER NOT NULL DEFAULT 0 )   
+	  
+	RCDFMT FLTRATOVR2 ; 
+  
+LABEL ON COLUMN EWPFR.FLTRATOVR2 
+( "Interval" IS '                    Interval            number' ) ; 
+  
+LABEL ON COLUMN EWPFR.FLTRATOVR2 
+( "Interval" TEXT IS '  Interval number' ) ; 
+  
+ 
+CREATE TABLE EWPFR.LCKWAITOVR ( 
+	"Interval Number" FOR COLUMN INTER00001 DECIMAL(5, 0) NOT NULL , 
+	"Date-Time" FOR COLUMN DATE_00001 TIMESTAMP NOT NULL , 
+	"Partition CPU Utilization" FOR COLUMN PARTI00001 DECIMAL(28, 2) DEFAULT NULL , 
+	"Seize Contention Time (Seconds)" FOR COLUMN SEIZE00001 DECIMAL(12, 2) DEFAULT NULL , 
+	"Database Record Lock Contention Time (Seconds)" FOR COLUMN DATAB00001 DECIMAL(12, 2) DEFAULT NULL , 
+	"Object Lock Contention Time (Seconds)" FOR COLUMN OBJEC00001 DECIMAL(12, 2) DEFAULT NULL , 
+	"Seize Contention Counts" FOR COLUMN SEIZE00002 INTEGER DEFAULT NULL , 
+	"Database Record Lock Contention Counts" FOR COLUMN DATAB00002 INTEGER DEFAULT NULL , 
+	"Object Lock Contention Counts" FOR COLUMN OBJEC00002 INTEGER DEFAULT NULL , 
+	"Seize Contention Contributing Jobs" FOR COLUMN SEIZE00003 INTEGER DEFAULT NULL , 
+	"Database Record Lock Contention Contributing Jobs" FOR COLUMN DATAB00003 INTEGER DEFAULT NULL , 
+	"Object Lock Contention Contributing Jobs" FOR COLUMN OBJEC00003 INTEGER DEFAULT NULL , 
+	"Seize Contention Normalized Time (Seconds)" FOR COLUMN SEIZE00004 DECIMAL(12, 2) DEFAULT NULL , 
+	"Database Record Lock Contention Normalized Time (Seconds)" FOR COLUMN DATAB00004 DECIMAL(12, 2) DEFAULT NULL , 
+	"Object Lock Contention Normalized Time (Seconds)" FOR COLUMN OBJEC00004 DECIMAL(12, 2) DEFAULT NULL )   
+	  
+	RCDFMT LCKWAITOVR ; 
+  
+LABEL ON COLUMN EWPFR.LCKWAITOVR 
+( "Interval Number" IS '                    Interval            number' ) ; 
+  
+LABEL ON COLUMN EWPFR.LCKWAITOVR 
+( "Interval Number" TEXT IS '  Interval number' ) ; 
+  
+
