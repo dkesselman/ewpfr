@@ -16,7 +16,7 @@ echo '--------------------------------------------------------------------------
 FILELINES=`sed -n "/$1/,/$2/p" $FILENAME`
 # Listo los miembros a buscar procesar
 echo 'Listing members for cycle'
-ls -la /QSYS.LIB/$LIBNAME.LIB/QAPMSYSTEM.FILE/ |cut -c59-68 |grep -Fv -e 'R' -e '.' > $FILENAME
+ls /QSYS.LIB/$LIBNAME.LIB/QAPMSYSTEM.FILE/ |cut -c1-10 |grep -Fv -e 'R' -e '.' > $FILENAME
 
 echo 'Creating auxiliary tables'
 qsh -i -c "DB2 -t -f $IFSPATH/ewpfr_create_files.sql"
