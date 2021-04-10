@@ -1,4 +1,5 @@
-# ewpfr
+# EWPFR
+
 IBM i - Performance Analisis
 
 This simple script based on PDI just create a couple of auxiliary tables and alias to performance data members, with a CSV output. 
@@ -18,5 +19,13 @@ Requirements
 
 * SSHD server running on IBM i
 * BASH
+
+#Screen Captures
+
+Importing CSVs with Excel you can get something like these:
+
+![EWPFR](https://github.com/dkesselman/ewpfr/blob/master/CPU.jpg "EWPFR - CPU Usage")
+
+![EWPFR](https://github.com/dkesselman/ewpfr/blob/master/CPU_Waits.jpg "EWPFR - CPU Waits - Normalized")
 
 Good Luck!
